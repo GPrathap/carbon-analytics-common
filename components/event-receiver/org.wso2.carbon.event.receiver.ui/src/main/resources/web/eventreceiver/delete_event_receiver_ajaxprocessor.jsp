@@ -12,8 +12,8 @@
   ~ CONDITIONS OF ANY KIND, either express or implied.  See the License for the
   ~ specific language governing permissions and limitations under the License.
   --%>
-<%@ page import="org.wso2.carbon.event.receiver.ui.EventReceiverUIUtils" %>
 <%@ page import="org.wso2.carbon.event.receiver.stub.EventReceiverAdminServiceStub" %>
+<%@ page import="org.wso2.carbon.event.receiver.ui.EventReceiverUIUtils" %>
 
 <%
     if (!"post".equalsIgnoreCase(request.getMethod())) {

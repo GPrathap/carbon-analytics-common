@@ -29,8 +29,10 @@ import org.wso2.carbon.event.input.adapter.filetail.internal.util.FileTailEventA
 import org.wso2.carbon.event.input.adapter.filetail.internal.util.FileTailerManager;
 
 import java.io.File;
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Input FileTailEventAdapter will be used to receive events from specified event file.

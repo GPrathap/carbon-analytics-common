@@ -23,7 +23,6 @@ import org.apache.commons.logging.LogFactory;
 import org.osgi.service.component.ComponentContext;
 import org.wso2.carbon.event.input.adapter.core.InputEventAdapterFactory;
 import org.wso2.carbon.event.input.adapter.jms.JMSEventAdapterFactory;
-import org.wso2.carbon.utils.ConfigurationContextService;
 
 /**
  * @scr.component component.name="input.Jms.AdapterService.component" immediate="true"

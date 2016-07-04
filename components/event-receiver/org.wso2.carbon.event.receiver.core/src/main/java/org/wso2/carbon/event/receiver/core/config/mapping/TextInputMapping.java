@@ -15,8 +15,8 @@
 package org.wso2.carbon.event.receiver.core.config.mapping;
 
 
-import org.wso2.carbon.event.receiver.core.config.InputMapping;
 import org.wso2.carbon.event.receiver.core.config.EventReceiverConstants;
+import org.wso2.carbon.event.receiver.core.config.InputMapping;
 
 public class TextInputMapping extends InputMapping {
 

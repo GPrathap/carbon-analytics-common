@@ -13,10 +13,10 @@
   ~ specific language governing permissions and limitations under the License.
   --%>
 <%@ page import="org.wso2.carbon.event.receiver.stub.EventReceiverAdminServiceStub" %>
-<%@ page import="org.wso2.carbon.event.receiver.ui.EventReceiverUIUtils" %>
-<%@ page import="org.wso2.carbon.event.stream.stub.EventStreamAdminServiceStub" %>
 <%@ page import="org.wso2.carbon.event.receiver.stub.types.DetailInputAdapterPropertyDto" %>
 <%@ page import="org.wso2.carbon.event.receiver.stub.types.InputAdapterConfigurationDto" %>
+<%@ page import="org.wso2.carbon.event.receiver.ui.EventReceiverUIUtils" %>
+<%@ page import="org.wso2.carbon.event.stream.stub.EventStreamAdminServiceStub" %>
 <%@ page import="java.util.Arrays" %>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>

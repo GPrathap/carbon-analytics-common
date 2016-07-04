@@ -38,6 +38,7 @@
         <module>org.wso2.carbon.event.receiver.server.feature</module>
         <module>org.wso2.carbon.event.input.adapter.server.feature</module>
         <module>org.wso2.carbon.event.input.adapter.http.server.feature</module>
+        <module>org.wso2.carbon.event.input.adapter.coap.server.feature</module>
         <module>org.wso2.carbon.event.input.adapter.soap.server.feature</module>
         <module>org.wso2.carbon.event.input.adapter.websocket.server.feature</module>
         <module>org.wso2.carbon.event.input.adapter.websocket.local.server.feature</module>
@@ -49,6 +50,4 @@
         <module>org.wso2.carbon.event.input.adapter.wso2event.server.feature</module>
         <module>org.wso2.carbon.event.input.adapter.feature</module>
     </modules>
-
-
 </project>

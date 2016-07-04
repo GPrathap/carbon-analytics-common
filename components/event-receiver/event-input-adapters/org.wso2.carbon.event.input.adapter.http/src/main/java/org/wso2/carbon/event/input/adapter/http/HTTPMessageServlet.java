@@ -175,7 +175,6 @@ public class HTTPMessageServlet extends HttpServlet {
             log.debug("Message : " + data);
         }
         HTTPEventAdapter.executorService.submit(new HTTPRequestProcessor(eventAdaptorListener, data, tenantId));
-
     }
 
     @Override
@@ -185,7 +184,6 @@ public class HTTPMessageServlet extends HttpServlet {
     }
 
     public class HTTPRequestProcessor implements Runnable {
-
         private InputEventAdapterListener inputEventAdapterListener;
         private String payload;
         private int tenantId;
@@ -217,7 +215,5 @@ public class HTTPMessageServlet extends HttpServlet {
                 PrivilegedCarbonContext.endTenantFlow();
             }
         }
-
     }
-
 }

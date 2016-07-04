@@ -130,6 +130,16 @@
                 <version>${carbon.kernel.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.eclipse.californium</groupId>
+                <artifactId>californium-core</artifactId>
+                <version>${org.eclipse.californium.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.californium</groupId>
+                <artifactId>element-connector</artifactId>
+                <version>${org.eclipse.californium.core.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.core.common</artifactId>
                 <version>${carbon.kernel.version}</version>
@@ -1285,6 +1295,7 @@
         <disruptor.orbit.version>3.3.2.wso2v2</disruptor.orbit.version>
         <kafka.version>0.8.1</kafka.version>
         <org.eclipse.paho.version>0.4.0</org.eclipse.paho.version>
+        <org.eclipse.californium.core.version>2.0.0-M1</org.eclipse.californium.core.version>
         <org.glassfish.tyrus.wso2.version>1.7-wso2v1</org.glassfish.tyrus.wso2.version>
         <google.jsmpp.version>2.0.1</google.jsmpp.version>
         <apache.servicemix.version>4.0-m1</apache.servicemix.version>

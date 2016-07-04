@@ -32,11 +32,7 @@ import org.wso2.carbon.event.receiver.core.internal.util.helper.EventReceiverCon
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.PatternSyntaxException;
 
 public class TextInputMapper implements InputMapper {

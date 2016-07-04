@@ -15,8 +15,8 @@
 package org.wso2.carbon.event.input.adapter.core.internal.ds;
 
 import com.hazelcast.core.HazelcastInstance;
-import org.wso2.carbon.event.input.adapter.core.internal.config.AdapterConfigs;
 import org.wso2.carbon.event.input.adapter.core.internal.CarbonInputEventAdapterService;
+import org.wso2.carbon.event.input.adapter.core.internal.config.AdapterConfigs;
 import org.wso2.carbon.registry.core.service.RegistryService;
 import org.wso2.carbon.utils.ConfigurationContextService;
 

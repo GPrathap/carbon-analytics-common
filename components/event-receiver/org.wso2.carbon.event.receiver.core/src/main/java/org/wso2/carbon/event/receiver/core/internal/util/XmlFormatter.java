@@ -15,7 +15,6 @@
 package org.wso2.carbon.event.receiver.core.internal.util;
 
 import org.apache.xerces.impl.Constants;
-import org.apache.xerces.util.*;
 import org.apache.xerces.util.SecurityManager;
 import org.apache.xml.serialize.OutputFormat;
 import org.apache.xml.serialize.XMLSerializer;

@@ -23,9 +23,6 @@ import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.context.PrivilegedCarbonContext;
 import org.wso2.carbon.event.input.adapter.core.InputEventAdapterListener;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 public class FileTailerListener extends TailerListenerAdapter {
 
     private String fileName;

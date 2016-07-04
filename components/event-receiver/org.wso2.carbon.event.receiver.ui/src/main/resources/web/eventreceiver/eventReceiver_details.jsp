@@ -17,11 +17,11 @@
         import="org.wso2.carbon.event.receiver.stub.EventReceiverAdminServiceStub" %>
 
 <%@ page
-        import="org.wso2.carbon.event.receiver.stub.types.EventReceiverConfigurationDto" %>
-<%@ page import="org.wso2.carbon.event.receiver.ui.EventReceiverUIUtils" %>
+        import="org.wso2.carbon.event.receiver.stub.types.DetailInputAdapterPropertyDto" %>
 <%@ page import="org.wso2.carbon.event.receiver.stub.types.EventMappingPropertyDto" %>
+<%@ page import="org.wso2.carbon.event.receiver.stub.types.EventReceiverConfigurationDto" %>
 <%@ page import="org.wso2.carbon.event.receiver.stub.types.InputAdapterConfigurationDto" %>
-<%@ page import="org.wso2.carbon.event.receiver.stub.types.DetailInputAdapterPropertyDto" %>
+<%@ page import="org.wso2.carbon.event.receiver.ui.EventReceiverUIUtils" %>
 <%@ taglib uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar" prefix="carbon" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 

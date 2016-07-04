@@ -17,18 +17,10 @@
  */
 package org.wso2.carbon.event.input.adapter.jms;
 
-import org.wso2.carbon.event.input.adapter.core.InputEventAdapter;
-import org.wso2.carbon.event.input.adapter.core.InputEventAdapterConfiguration;
-import org.wso2.carbon.event.input.adapter.core.InputEventAdapterFactory;
-import org.wso2.carbon.event.input.adapter.core.MessageType;
-import org.wso2.carbon.event.input.adapter.core.Property;
+import org.wso2.carbon.event.input.adapter.core.*;
 import org.wso2.carbon.event.input.adapter.jms.internal.util.JMSEventAdapterConstants;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * The jms event adapter factory class to create a jms input adapter
