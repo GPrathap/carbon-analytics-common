@@ -174,7 +174,6 @@ public class CarbonInputEventAdapterService implements InputEventAdapterService 
     @Override
     public void startPolling() {
         startPollingTriggered = true;
-
         for (Map.Entry<Integer, ConcurrentHashMap<String, InputAdapterRuntime>> pair : tenantSpecificEventAdapters.entrySet()) {
             Map<String, InputAdapterRuntime> map = pair.getValue();
             int tenantId = pair.getKey();
@@ -197,7 +196,6 @@ public class CarbonInputEventAdapterService implements InputEventAdapterService 
     @Override
     public void start() {
         this.startTriggered = true;
-
         for (Map.Entry<Integer, ConcurrentHashMap<String, InputAdapterRuntime>> pair : tenantSpecificEventAdapters.entrySet()) {
             Map<String, InputAdapterRuntime> map = pair.getValue();
             int tenantId = pair.getKey();
@@ -241,5 +239,4 @@ public class CarbonInputEventAdapterService implements InputEventAdapterService 
             }
         }
     }
-
 }

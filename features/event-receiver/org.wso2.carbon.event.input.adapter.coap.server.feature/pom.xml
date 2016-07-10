@@ -33,12 +33,6 @@
     <name>WSO2 Carbon - Event Input CoAP Adapter Server Feature</name>
     <url>http://wso2.org</url>
     <description>This feature contains the bundles required for Input CoAP Event Adapter functionality</description>
-    <dependencies>
-        <dependency>
-            <groupId>org.eclipse.californium</groupId>
-            <artifactId>californium-core</artifactId>
-        </dependency>
-    </dependencies>
     <build>
         <plugins>
             <plugin>

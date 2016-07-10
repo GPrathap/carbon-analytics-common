@@ -20,36 +20,31 @@ import org.apache.commons.logging.LogFactory;
 import org.eclipse.californium.core.CoapResource;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.wso2.carbon.context.PrivilegedCarbonContext;
+import org.wso2.carbon.event.input.adapter.coap.internal.util.CoAPEventAdapterConstants;
 import org.wso2.carbon.event.input.adapter.core.InputEventAdapterListener;
 
 
 public class CoAPResourceServlet extends CoapResource {
 
-    private static final String AUTHORIZATION_HEADER = "Authorization";
-
-    private static final String AUTH_MESSAGE_STORE_TENANT_ID = "AUTH_MESSAGE_STORE_TENANT_ID";
-
-    private static final String AUTH_FAILURE_RESPONSE = "_AUTH_FAILURE_";
-
     private static Log log = LogFactory.getLog(CoAPResourceServlet.class);
 
     private InputEventAdapterListener eventAdaptorListener;
     private int tenantId;
-    private String exposedTransports;
 
-    public CoAPResourceServlet(InputEventAdapterListener eventAdaptorListener, int tenantId, String exposedTransports, String recourseName) {
-        super(recourseName);
+    public CoAPResourceServlet(InputEventAdapterListener eventAdaptorListener, int tenantId, String exposedTransports
+            , String recourseName) {
+        super(recourseName, CoAPEventAdapterConstants.COAP_RESOURCES_VISIBILITY);
         this.eventAdaptorListener = eventAdaptorListener;
         this.tenantId = tenantId;
-        this.exposedTransports = exposedTransports;
     }
 
     @Override
     public void handleGET(CoapExchange exchange) {
-        exchange.respond("hello world"); // reply with 2.05 payload (text/plain)
+        exchange.respond("hello world------>>>"); // reply with 2.05 payload (text/plain)
     }
     @Override
     public void handlePOST(CoapExchange exchange) {
+        exchange.respond("--00-00-00-00-00--->>><<<<");
         exchange.accept(); // make it a separate response
         exchange.getRequestOptions();
         String data = exchange.getRequestText();
@@ -62,7 +57,7 @@ public class CoAPResourceServlet extends CoapResource {
         CoAPEventAdapter.executorService.submit(new CoAPRequestProcessor(eventAdaptorListener, data, tenantId));
     }
 
-    public class CoAPRequestProcessor implements Runnable {
+    public static class CoAPRequestProcessor implements Runnable {
         private InputEventAdapterListener inputEventAdapterListener;
         private String payload;
         private int tenantId;
@@ -81,7 +76,6 @@ public class CoAPResourceServlet extends CoapResource {
                 if (log.isDebugEnabled()) {
                     log.debug("Event received in CoAP Event Adapter - " + payload);
                 }
-
                 if (payload.trim() != null) {
                     inputEventAdapterListener.onEvent(payload);
                 } else {

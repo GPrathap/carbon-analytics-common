@@ -15,9 +15,12 @@
 package org.wso2.carbon.event.input.adapter.coap.internal.util;
 
 
+import org.eclipse.californium.core.network.config.NetworkConfig;
+
 public final class CoAPEventAdapterConstants {
 
     private CoAPEventAdapterConstants() {
+
     }
 
     public static final String ADAPTER_TYPE_CaAP = "coap";
@@ -30,7 +33,7 @@ public final class CoAPEventAdapterConstants {
     public static final int ADAPTER_MAX_THREAD_POOL_SIZE = 100;
     public static final int ADAPTER_EXECUTOR_JOB_QUEUE_SIZE = 10000;
     public static final long DEFAULT_KEEP_ALIVE_TIME_IN_MILLS = 20000;
-    public static final String ENDPOINT_PREFIX = "/endpoints/";
+    public static final String ENDPOINT_PREFIX = "coap-endpoints";
     public static final String ENDPOINT_URL_SEPARATOR = "/";
     public static final String ENDPOINT_TENANT_KEY = "t";
     public static final String ADAPTER_MIN_THREAD_POOL_SIZE_NAME = "minThread";
@@ -40,10 +43,24 @@ public final class CoAPEventAdapterConstants {
     public static final String EXPOSED_TRANSPORTS = "transports";
     public static final String CoAPS = "coaps";
     public static final String CoAP = "coap";
-    public static final String LOCAL = "local";
-    public static final String ALL = "all";
     public static final String CARBON_CONFIG_PORT_OFFSET_NODE = "Ports.Offset";
     public static final int DEFAULT_CaAP_PORT = 5683;
     public static final int DEFAULT_CaAPS_PORT = 5684;
+    public static final int COAPS_PORT = NetworkConfig.getStandard().getInt(NetworkConfig.Keys.COAP_SECURE_PORT);
+    public static final int COAP_PORT = NetworkConfig.getStandard().getInt(NetworkConfig.Keys.COAP_PORT);
+    public static final String HOST_NAME = "HostName";
+    public static final String IN_MEMORY_PKS_STORE_PASSWORD = "sesame";
+    public static final String IN_MEMORY_PKS_STORE_PASSWORD_HOLDER = "password";
+    public static final String KEY_STORE_TYPE = "JKS";
+    public static final String CA_CERTIFICATE_NAME = "root";
+    public static final String TRUST_STORE_PASSWORD = "Security.TrustStore.Password";
+    public static final String TRUST_STORE_LOCATION = "Security.TrustStore.Location";
+    public static final String KEY_STORE_LOCATION = "Security.KeyStore.Location";
+    public static final String KEY_STORE_PASSWORD = "Security.KeyStore.Password";
+    public static final String SERVER_CERTIFICATE_NAME = "server";
+    public static final boolean COAP_RESOURCES_VISIBILITY = true;
+    public static final String DEFAULT_CHARSET = "UTF-8";
+
+
 
 }

@@ -19,10 +19,14 @@ import org.wso2.carbon.event.input.adapter.coap.internal.util.CoAPEventAdapterCo
 import org.wso2.carbon.event.input.adapter.core.*;
 import org.wso2.carbon.utils.CarbonUtils;
 
-import java.util.*;
+import java.util.ResourceBundle;
+import java.util.Locale;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
 
 /**
- * The http event adapter factory class to create a http input adapter
+ * The CoAP event adapter factory class to create a CoAP input adapter
  */
 public class CoAPEventAdapterFactory extends InputEventAdapterFactory {
 
@@ -30,10 +34,10 @@ public class CoAPEventAdapterFactory extends InputEventAdapterFactory {
             ResourceBundle.getBundle("org.wso2.carbon.event.input.adapter.coap.i18n.Resources", Locale.getDefault());
     private int coapPort;
     private int coapsPort;
-    private int portOffset;
+
 
     public CoAPEventAdapterFactory() {
-        portOffset = getPortOffset();
+        int portOffset = getPortOffset();
         coapPort = CoAPEventAdapterConstants.DEFAULT_CaAP_PORT + portOffset;
         coapsPort = CoAPEventAdapterConstants.DEFAULT_CaAPS_PORT + portOffset;
     }
@@ -55,15 +59,15 @@ public class CoAPEventAdapterFactory extends InputEventAdapterFactory {
     @Override
     public List<Property> getPropertyList() {
 
-        List<Property> propertyList = new ArrayList<Property>();
-
+        List<Property> propertyList = new ArrayList<>();
         // Transport Exposed
         Property exposedTransportsProperty = new Property(CoAPEventAdapterConstants.EXPOSED_TRANSPORTS);
         exposedTransportsProperty.setRequired(true);
         exposedTransportsProperty.setDisplayName(
                 resourceBundle.getString(CoAPEventAdapterConstants.EXPOSED_TRANSPORTS));
-        exposedTransportsProperty.setOptions(new String[]{CoAPEventAdapterConstants.CoAPS, CoAPEventAdapterConstants.CoAP, CoAPEventAdapterConstants.LOCAL, CoAPEventAdapterConstants.ALL});
-        exposedTransportsProperty.setDefaultValue(CoAPEventAdapterConstants.ALL);
+        exposedTransportsProperty.setOptions(new String[]{CoAPEventAdapterConstants.CoAPS
+                , CoAPEventAdapterConstants.CoAP});
+        exposedTransportsProperty.setDefaultValue(CoAPEventAdapterConstants.CoAP);
 
         propertyList.add(exposedTransportsProperty);
         return propertyList;

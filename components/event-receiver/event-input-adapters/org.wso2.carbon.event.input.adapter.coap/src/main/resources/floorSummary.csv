@@ -1,40 +1,24 @@
-user1,deviceType3,1ty82,1464930772612,1twc2,sensorType1,floor2,51.467463 -0.066761,group2,warning
-user4,deviceType3,2sd42,1464930772614,4bw82,sensorType1,floor2,51.538988 0.101225,group2,danger
-user4,deviceType1,18961,1464930772613,rvd82,sensorType2,floor2,51.390046 0.090267,group3,danger
-user4,deviceType5,43sw6,1464930772613,2qa82,sensorType3,floor1,51.575309 0.073992,group3,danger
-user4,deviceType2,1891s,1464930772613,1d3v2,sensorType3,floor1,51.386141 0.087344,group3,ok
-user4,deviceType2,mo485,1464930772613,1rbt2,sensorType1,floor1,51.535947 0.077062,group1,danger
-user4,deviceType2,6q168,1464930772613,23r82,sensorType1,floor3,51.486264 -0.297534,group1,warning
-user4,deviceType1,we521,1464930772613,1r5n2,sensorType6,floor3,51.533588 0.106023,group1,ok
-user4,deviceType4,yn309,1464930772614,1ty2v,sensorType6,floor1,51.56256 0.130042,group5,ok
-user4,deviceType4,we956,1464930772614,cgy82,sensorType1,floor1,51.533551 0.084407,group5,warning
-user2,deviceType3,1ey82,1464930772612,1y1c2,sensorType1,floor2,51.467463 -0.066761,group2,danger
-user2,deviceType3,2gd42,1464930772614,4uy82,sensorType1,floor2,51.538988 0.101225,group2,ok
-user2,deviceType1,1e961,1464930772613,rq682,sensorType2,floor2,51.390046 0.090267,group3,ok
-user2,deviceType5,4asw6,1464930772613,2fs82,sensorType3,floor1,51.575309 0.073992,group3,danger
-user2,deviceType2,1d91s,1464930772613,1y3v2,sensorType3,floor1,51.386141 0.087344,group3,ok
-user2,deviceType2,m1485,1464930772613,1ubt2,sensorType1,floor1,51.535947 0.077062,group1,warning
-user2,deviceType2,64168,1464930772613,2ey82,sensorType1,floor3,51.486264 -0.297534,group1,ok
-user2,deviceType1,wt521,1464930772613,1y5n2,sensorType6,floor3,51.533588 0.106023,group1,warning
-user4,deviceType4,3n309,1464930772614,1yy2v,sensorType6,floor1,51.56256 0.130042,group5,ok
-user4,deviceType4,w5956,1464930772614,cuy82,sensorType1,floor1,51.533551 0.084407,group5,warning
-user4,deviceType3,tty82,1464930772612,1i1c2,sensorType1,floor2,51.467463 -0.066761,group2,danger
-user6,deviceType3,2rd42,1464930772614,4wy82,sensorType1,floor2,51.538988 0.101225,group2,ok
-user6,deviceType1,1r961,1464930772613,rt682,sensorType2,floor2,51.390046 0.090267,group3,ok
-user6,deviceType5,4tsw6,1464930772613,2us82,sensorType3,floor1,51.575309 0.073992,group3,ok
-user6,deviceType2,1e91s,1464930772613,1w3v2,sensorType3,floor1,51.386141 0.087344,group3,warning
-user6,deviceType2,mt485,1464930772613,1ybt2,sensorType1,floor1,51.535947 0.077062,group1,ok
-user6,deviceType2,6q168,1464930772613,23t82,sensorType1,floor3,51.486264 -0.297534,group1,danger
-user3,deviceType1,we521,1464930772613,1t5y2,sensorType6,floor3,51.533588 0.106023,group1,ok
-user3,deviceType4,yb309,1464930772614,1tyrv,sensorType6,floor1,51.56256 0.130042,group5,ok
-user3,deviceType4,ee956,1464930772614,cvy82,sensorType1,floor1,51.533551 0.084407,group5,ok
-user3,deviceType3,1yy82,1464930772612,1t1t2,sensorType1,floor2,51.467463 -0.066761,group2,warning
-user3,deviceType3,2bd42,1464930772614,4bye2,sensorType1,floor2,51.538988 0.101225,group2,ok
-user3,deviceType1,1s961,1464930772613,rv6w2,sensorType2,floor2,51.390046 0.090267,group3,ok
-user3,deviceType5,43sw6,1464930772613,2qss2,sensorType3,floor1,51.575309 0.073992,group3,danger
-user3,deviceType2,1t91s,1464930772613,123r2,sensorType3,floor1,51.386141 0.087344,group3,ok
-user3,deviceType2,mog85,1464930772613,1vby2,sensorType1,floor1,51.535947 0.077062,group1,warning
-user1,deviceType2,6qh68,1464930772613,23yu2,sensorType1,floor3,51.486264 -0.297534,group1,ok
-user1,deviceType1,wed21,1464930772613,1t5j2,sensorType6,floor3,51.533588 0.106023,group1,danger
-user1,deviceType4,yn509,1464930772614,1tyyv,sensorType6,floor1,51.56256 0.130042,group5,ok
-user1,deviceType4,we9s6,1464930772614,cvye2,sensorType1,floor1,51.533551 0.084407,group5,danger
+3swdjfrrt3,home2,1,ok,message1,summary4,group4
+3swdjfrrt3,home2,2,ok,message2,summary2,group4
+2s3d4frrt5,home1,1,ok,message3,summary4,group4
+2s3d4frrt5,home1,2,ok,message2,summary2,group2
+2s3d4frrt5,home1,3,ok,message4,summary1,group2
+2s3d4frrt5,home1,4,danger,message1,summary2,group2
+3swdjfrrt3,home2,3,ok,message1,summary1,group4
+3swdjfrrt3,home2,4,danger,message1,summary2,group1
+3swdjfrrt3,home2,5,warning,message1,summary4,group1
+3swdjfrrt3,home2,6,danger,message1,summary2,group1
+2sweckjrrt,home3,1,ok,message1,summary4,group1
+2sweckjrrt,home3,2,ok,message1,summary2,group1
+2sweckjrrt,home3,3,ok,message1,summary1,group1
+2sweckjrrt,home3,4,ok,message1,summary2,group1
+2sweckjrrt,home3,5,warning,message1,summary1,group2
+2sweckjrrt,home3,6,ok,message1,summary2,group2
+2sweckjrrt,home3,7,warning,message2,summary1,group1
+awxcffrrt3,home4,2,danger,message1,summary2,group1
+awxcffrrt3,home4,1,warning,message2,summary4,group1
+xwed4frrt3,home9,2,danger,message1,summary2,group1
+2s3d4frrt5,home9,1,ok,message3,summary4,group2
+2scdfvrrt3,home9,3,ok,message2,summary2,group1
+awxcffrrt3,home4,1,ok,message4,summary4,group1
+awxcffrrt3,home4,2,ok,message2,summary2,group2

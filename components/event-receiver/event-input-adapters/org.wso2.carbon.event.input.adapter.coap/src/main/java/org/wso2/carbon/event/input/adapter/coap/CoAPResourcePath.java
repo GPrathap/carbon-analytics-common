@@ -19,79 +19,61 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.eclipse.californium.core.CoapResource;
 import org.eclipse.californium.core.server.resources.CoapExchange;
-import org.wso2.carbon.context.PrivilegedCarbonContext;
+import org.eclipse.californium.core.server.resources.Resource;
+import org.wso2.carbon.event.input.adapter.coap.internal.util.CoAPEventAdapterConstants;
 import org.wso2.carbon.event.input.adapter.core.InputEventAdapterListener;
 
 
 public class CoAPResourcePath extends CoapResource {
 
-    private static final String AUTHORIZATION_HEADER = "Authorization";
-
-    private static final String AUTH_MESSAGE_STORE_TENANT_ID = "AUTH_MESSAGE_STORE_TENANT_ID";
-
-    private static final String AUTH_FAILURE_RESPONSE = "_AUTH_FAILURE_";
-
     private static Log log = LogFactory.getLog(CoAPResourcePath.class);
+    private static int parentResourceIndex = 0;
+    private static int minimumResourcesLength = 2;
+    private static int childResourceIndex = 1;
 
-    private InputEventAdapterListener eventAdaptorListener;
-    private int tenantId;
-    private String exposedTransports;
+    public CoAPResourcePath(InputEventAdapterListener eventAdaptorListener, int tenantId, String exposedTransports
+            , String[] endpoint) {
+        super(endpoint[parentResourceIndex], CoAPEventAdapterConstants.COAP_RESOURCES_VISIBILITY);
+        addResource(endpoint, eventAdaptorListener, tenantId, exposedTransports);
+    }
 
-    public CoAPResourcePath(InputEventAdapterListener eventAdaptorListener, int tenantId, String exposedTransports, String recourseName) {
-        super(recourseName);
-        this.eventAdaptorListener = eventAdaptorListener;
-        this.tenantId = tenantId;
-        this.exposedTransports = exposedTransports;
+    public CoAPResourcePath(String path) {
+        super(path, CoAPEventAdapterConstants.COAP_RESOURCES_VISIBILITY);
+        getAttributes().setTitle("Long path resource");
     }
 
     @Override
     public void handleGET(CoapExchange exchange) {
-        exchange.respond("hello world"); // reply with 2.05 payload (text/plain)
+        exchange.respond("hello world--->>><<<<"); // reply with 2.05 payload (text/plain)
     }
+
     @Override
     public void handlePOST(CoapExchange exchange) {
-        exchange.accept(); // make it a separate response
-        exchange.getRequestOptions();
-        String data = exchange.getRequestText();
-        if (data == null) {
-            log.warn("Event Object is empty/null");
-            return;
-        }
-        log.info("Message : " + data);
-        exchange.respond("POST: "+ data);
-        CoAPEventAdapter.executorService.submit(new CoAPRequestProcessor(eventAdaptorListener, data, tenantId));
+        exchange.respond("-->>><<<<");
     }
 
-    public class CoAPRequestProcessor implements Runnable {
-        private InputEventAdapterListener inputEventAdapterListener;
-        private String payload;
-        private int tenantId;
-
-        public CoAPRequestProcessor(InputEventAdapterListener inputEventAdapterListener, String payload, int tenantId) {
-            this.inputEventAdapterListener = inputEventAdapterListener;
-            this.payload = payload;
-            this.tenantId = tenantId;
-        }
-
-        public void run() {
-            try {
-                PrivilegedCarbonContext.startTenantFlow();
-                PrivilegedCarbonContext.getThreadLocalCarbonContext().setTenantId(tenantId);
-
-                if (log.isDebugEnabled()) {
-                    log.debug("Event received in CoAP Event Adapter - " + payload);
-                }
-
-                if (payload.trim() != null) {
-                    inputEventAdapterListener.onEvent(payload);
+    private void addResource(String[] subDirectories, InputEventAdapterListener eventAdaptorListener, int tenantId
+            , String exposedTransports) {
+        String[] resources = subDirectories;
+        Resource parentResource;
+        Resource childResource;
+        if (resources.length > minimumResourcesLength) {
+            parentResource = new CoAPResourcePath(resources[childResourceIndex]);
+            add(parentResource);
+            for (int i = minimumResourcesLength; i < resources.length; i++) {
+                if (i == resources.length - 1) {
+                    childResource = new CoAPResourceServlet(eventAdaptorListener, tenantId, exposedTransports
+                            , resources[i]);
+                    parentResource.add(childResource);
                 } else {
-                    log.warn("Dropping the empty/null event received through CoAP adapter");
+                    childResource = new CoAPResourcePath(resources[i]);
+                    parentResource.add(childResource);
                 }
-            } catch (Exception e) {
-                log.error("Error while parsing CoAP request for processing: " + e.getMessage(), e);
-            } finally {
-                PrivilegedCarbonContext.endTenantFlow();
+                parentResource = childResource;
             }
+        } else if (resources.length == minimumResourcesLength) {
+            add(new CoAPResourceServlet(eventAdaptorListener, tenantId, exposedTransports
+                    , resources[childResourceIndex]));
         }
     }
 }
