@@ -1,0 +1,50 @@
+{
+  "name": "org.wso2.iot.homeautomation.sensors.status",
+  "version": "1.0.0",
+  "nickName": "",
+  "description": "",
+  "metaData": [
+    {
+      "name": "owner",
+      "type": "STRING"
+    },
+    {
+      "name": "deviceType",
+      "type": "STRING"
+    },
+    {
+      "name": "deviceId",
+      "type": "STRING"
+    },
+    {
+      "name": "time",
+      "type": "LONG"
+    }
+  ],
+  "payloadData": [
+    {
+      "name": "sensorId",
+      "type": "STRING"
+    },
+    {
+      "name": "sensorType",
+      "type": "STRING"
+    },
+    {
+      "name": "sensorLocation",
+      "type": "STRING"
+    },
+    {
+      "name": "sensorCoordinates",
+      "type": "STRING"
+    },
+    {
+      "name": "group",
+      "type": "STRING"
+    },
+    {
+      "name": "currentStatus",
+      "type": "STRING"
+    }
+  ]
+}
